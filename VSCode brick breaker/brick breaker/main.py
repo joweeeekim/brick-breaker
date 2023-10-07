@@ -12,7 +12,7 @@ PADDLE_WIDTH = 100
 PADDLE_HEIGHT = 10
 BALL_RADIUS = 5
 
-LIVES_FONT = pygame.font.SysFont("comicsans", 40)
+LIVES_FONT = pygame.font.SysFont("reach story", 40)
 
 class Paddle:
     VEL = 10
@@ -85,7 +85,7 @@ class Brick:
         return tuple(int(a + (b - a) * t) for a, b in zip(color_a, color_b))
 
 def draw(win, paddle, ball, bricks, lives):
-    win.fill("white")
+    win.fill("pink")
     paddle.draw(win)
     ball.draw(win)
 
@@ -130,7 +130,7 @@ def generate_bricks(rows, cols):
     bricks = []
     for row in range(rows):
         for col in range(cols):
-            brick = Brick(col * brick_width + gap * col, row * brick_height + gap * row, brick_width, brick_height, 2, [(0, 255, 0), (255, 0, 0)]) 
+            brick = Brick(col * brick_width + gap * col, row * brick_height + gap * row, brick_width, brick_height, 2, [(255, 0, 255), (255, 0, 0)]) 
             bricks.append(brick)
 
     return bricks
@@ -214,9 +214,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
-
-#30:00, generating the bricks, https://www.youtube.com/watch?v=K-Ek0gT8JPM
